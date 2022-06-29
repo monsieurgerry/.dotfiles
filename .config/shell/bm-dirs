@@ -1,0 +1,10 @@
+cache ${XDG_CACHE_HOME:-$HOME/.cache}
+cf ${XDG_CONFIG_HOME:-$HOME/.config}
+Downloads   ${XDG_DOWNLOAD_DIR:-$HOME/Downloads}
+Documents   ${XDG_DOCUMENTS_DIR:-$HOME/Documents}
+dt  ${XDG_DATA_HOME:-$HOME/.local/share}
+Binaries  $HOME/.local/bin
+Home   $HOME
+Music   ${XDG_MUSIC_DIR:-$HOME/Music}
+Pictures  ${XDG_PICTURES_DIR:-$HOME/Pictures}
+Videos  ${XDG_VIDEOS_DIR:-$HOME/Videos}

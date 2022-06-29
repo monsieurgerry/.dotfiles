@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# This is bound to Shift+PrintScreen by default, requires maim. It lets you
+# choose the kind of screenshot to take, including copying the image or even
+# highlighting an area to copy. scrotcucks on suicidewatch right now.
+
+case "$(printf "a selected area\\ncurrent window\\nfull screen\\na selected area (copy)\\ncurrent window (copy)\\nfull screen (copy)" | dmenu -l 6 -i -p "Screenshot which area?")" in
+	"a selected area") maim -s /home/gerry/Pictures/screenshots/sele/pic-selected_"$(date '+%y-%m-%d_%H:%M:%S').png" | dunstify -i "galeria" "Screenshot saved" -t 4000 ;;
+	"current window") maim -i "$(xdotool getactivewindow)" /home/gerry/Pictures/screenshots/wind/pic-window_"$(date '+%y-%m-%d_%H:%M:%S').png" | dunstify -i "galeria" "Screenshot saved" -t 4000 ;;
+	"full screen") maim /home/gerry/Pictures/screenshots/full/pic-full_"$(date '+%y-%m-%d_%H:%M:%S').png" | dunstify -i "galeria" "Screenshot saved" -t 4000 ;;
+  "a selected area (copy)") maim -s | xclip -selection clipboard -t image/png | dunstify -i "galeria" "Selected on clipboard" -t 4000 ;;
+  "current window (copy)") maim -i "$(xdotool getactivewindow)" | xclip -selection clipboard -t image/png | dunstify -i "galeria" "Window on clipboard" -t 4000 ;;
+  "full screen (copy)") maim | xclip -selection clipboard -t image/png | dunstify -i "galeria" "Screen on clipboard" -t 4000 ;;
+esac

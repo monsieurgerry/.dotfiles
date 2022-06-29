@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+while [ : ]; do
+    ~/awesometimes --geometry 1410x900+2412+1200 -s medium --opacity 0.4
+    pid=$!
+    sleep 10
+    kill $pid
+done

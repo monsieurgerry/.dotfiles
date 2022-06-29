@@ -1,0 +1,12 @@
+#!/bin/bash
+
+case $1 in
+  us)
+    setxkbmap us
+	dunstify -a "changekeyboard" -u low -r "9993" "Keyboard layout: ENGLISH🇬🇧" -t 2000
+  ;;
+  es)
+    setxkbmap es
+        dunstify -a "changekeyboard" -u low -r "9993" "Keyboard layout: SPANISH🇲🇽   " -t 2000
+  ;;
+esac

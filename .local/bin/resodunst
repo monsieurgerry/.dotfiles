@@ -1,0 +1,28 @@
+#!/bin/sh
+
+df_check_location='/home'
+
+# Memoria
+free_output=$(free -h | grep Mem)
+MEMUSED=$(echo $free_output | awk '{print $3}')
+MEMTOT=$(echo $free_output | awk '{print $2}')
+
+# CPU
+CPU=$(top -bn1 | grep Cpu | awk '{print $2}')%
+CPUTEMP=$( sensors | grep -m 1 temp1 | awk '{print $2}' )
+
+# Disco
+df_output=$(df -h $df_check_location | tail -n 1)
+DISCUSED=$(echo $df_output | awk '{print $3}')
+DISCTOT=$(echo $df_output | awk '{print $2}')
+DISCPER=$(echo $df_output | awk '{print $5}')
+
+# TODO: Cambiar a solo una notificacion (maybe).
+dunstify -i "memory" -t 9000 \
+"MEMORIA: ${MEMUSED}:${MEMTOT}"
+dunstify -i "cpu" -t 9000 \
+"CPU: ${CPU}"
+dunstify -i "temp" -t 9000 \
+"TEMPERATURA: ${CPUTEMP}"
+dunstify -i "disk" -t 9000 \
+"DISCO: ${DISCUSED}:${DISCTOT} -> ${DISCPER}"
