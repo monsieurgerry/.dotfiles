@@ -33,8 +33,7 @@ map_tele("<leader>ed", "edit_dwm")
 map_tele("<space>fe", "escuela")
 
 -- Walls
-map_tele("<leader>wa", "animus_selector")
-map_tele("<leader>ww", "wallpaper_selector")
+map_tele("<leader>w", "wallpaper_selector")
 
 -- Busqueda
 map_tele("<space>fp", "projects")

@@ -22,7 +22,7 @@ local custom_attach = function()
 
 end
 
-local language_path = "/home/gerry/Library/"
+local language_path = "/home/gerry/.local/lib/"
 
 nvim_lsp.sumneko_lua.setup {
     capabilities = capabilities,

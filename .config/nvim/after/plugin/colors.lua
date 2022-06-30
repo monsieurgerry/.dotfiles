@@ -46,12 +46,12 @@ end
 M.change_colors("tokyonight")
 
 local mode = "n"
-local map_options = {
+local opt = {
     noremap = true,
     silent = true,
 }
 local map = vim.api.nvim_set_keymap
-map(mode, "<leader><leader>g", "<cmd>lua require('after.plugin.colors').change_colors('gruvbox')<CR>", map_options)
-map(mode, "<leader><leader>t", "<cmd>lua require('after.plugin.colors').change_colors('tokyonight')<CR>", map_options)
+map(mode, "<leader><leader>g", "<cmd>lua require('after.plugin.colors').change_colors('gruvbox')<CR>", opt)
+map(mode, "<leader><leader>t", "<cmd>lua require('after.plugin.colors').change_colors('tokyonight')<CR>", opt)
 
 return M

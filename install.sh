@@ -2,4 +2,4 @@
 
 dir="$(pwd)"
 cp -rsf "$dir"/. ~
-rm -rf ~/install.sh
+rm -rf ~/install.sh ~/.git

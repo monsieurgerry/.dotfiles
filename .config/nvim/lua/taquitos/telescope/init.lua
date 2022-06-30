@@ -16,7 +16,10 @@ end
 local M = {}
 
 function M.fd()
-  local opts = themes.get_ivy { hidden = false }
+  local opts = themes.get_ivy {
+      hidden = true,
+      follow = true,
+  }
   require("telescope.builtin").fd(opts)
 end
 
@@ -26,8 +29,9 @@ function M.edit_neovim()
   local opts_with_preview, opts_without_preview
 
   opts_with_preview = {
-    prompt_title = "💚 Neovim 💚",
+    prompt_title = "~ Neovim ~",
     shorten_path = false,
+    follow = true,
     cwd = "~/.config/nvim",
 
     layout_strategy = "flex",
@@ -86,9 +90,10 @@ function M.edit_zsh()
     winblend = 6,
     previewer = false,
     shorten_path = false,
-    prompt_title = "🧡 ZSH 🧡",
-
+    prompt_title = "~ ZSH ~",
     cwd = "~/.config/shell",
+
+    follow = true,
 
     layout_config = {
       width = width,
@@ -99,17 +104,22 @@ function M.edit_zsh()
 end
 
 function M.edit_dwm()
-  tele_find {
-    prompt_title = "💙 DWM 💙",
-    shorten_path = false,
+  local width = 0.50
+  local opts = themes.get_dropdown {
     cwd = "~/.config/dwm/",
-    hidden = true,
+    prompt_title = "~ DWM ~",
+
+    previewer = false,
+    shorten_path = false,
+    hidden = false,
+    follow = true,
 
     layout_strategy = "horizontal",
     layout_config = {
-      preview_width = 0.55,
+        width = width,
     },
   }
+  require("telescope.builtin").find_files(opts)
 end
 
 -- Personal
@@ -119,6 +129,7 @@ function M.awesometimes()
     prompt_title = "🤍 AWESOMETIMES 🖤",
     shorten_path = false,
     cwd = "~/awesometimes/",
+    hidden = false,
 
     layout_strategy = "horizontal",
     layout_config = {
@@ -131,7 +142,7 @@ end
 function M.projects()
     tele_find {
         shorten_path = false,
-        cwd = "~/awesometimes/Projects/",
+        cwd = "~/awesometimes/projects/",
         prompt = "~ DREAMS ~",
         hidden = true,
 
@@ -277,7 +288,7 @@ end
 
 function M.buffers()
   require("telescope.builtin").buffers {
-    shorten_path = false,
+    shorten_path = true,
   }
 end
 
@@ -332,7 +343,6 @@ local function selec_imagen(prompt, cwd)
     end
 end
 
-M.animus_selector = selec_imagen(" ~ 💜 ~ ", "~/Pictures/walls")
--- M.wallpaper_selector = selec_imagen("< 💙 > ", "~/Pictures/walls/Wallpapers")
+M.wallpaper_selector = selec_imagen(" ~ 💜 ~ ", "~/Pictures/walls")
 
 return M

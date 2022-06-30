@@ -1,2 +1,2 @@
 # Wola
-Vamoa probar...
+Instalacion de neovim simple, rapida, y aprueba de vscode.
