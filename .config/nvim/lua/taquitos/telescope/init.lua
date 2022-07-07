@@ -218,9 +218,11 @@ end
 
 function M.live_grep()
   require("telescope.builtin").live_grep {
-    -- shorten_path = true,
+    shorten_path = true,
     previewer = false,
     fzf_separator = "|>",
+    hidden = true,
+    follow = true,
   }
 end
 
@@ -228,6 +230,7 @@ function M.grep_prompt()
   require("telescope.builtin").grep_string {
     path_display = { "shorten" },
     search = vim.fn.input "Grep String > ",
+    follow = true,
   }
 end
 

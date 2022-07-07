@@ -1,9 +1,10 @@
 local g = vim.g
 local opt = vim.opt
+local hl = vim.api.nvim_set_hl
 
 local M = {}
 
-function M.change_colors(color)
+function M.awesome_colors(color)
     opt.termguicolors = true
     opt.background = "dark"
     require("colorizer").setup()
@@ -20,38 +21,27 @@ function M.change_colors(color)
 
     vim.cmd("colorscheme " .. color)
 
-    local hl = function(highlight, opts)
-        vim.api.nvim_set_hl(0, highlight, opts)
-    end
-
-    hl("SignColumn", {
-        bg = "none"
-    })
-    hl("CursorLineNR", {
-        bg = "None"
-    })
-    hl("LineNr", {
-        fg = "#00ADB5"
-    })
+    hl(0, "SignColumn", { bg = "None" })
+    hl(0, "ColorColumn", { bg = "#232d6b" })
+    hl(0, "CursorLineNR", { bg = "None" })
+    hl(0, "LineNr", { fg = "#5484b2" })
+    hl(0, "NonText", { fg = "#232d6b" })
 
     if color == "gruvbox" then
-        hl("Normal", {
-            ctermbg = "none",
-            bg = "none",
-        })
+        hl(0, "Normal", { ctermbg = "None", bg = "None" })
     end
 end
 
--- M.change_colors("gruvbox")
-M.change_colors("tokyonight")
+-- M.awesome_colors("gruvbox")
+M.awesome_colors("tokyonight")
 
 local mode = "n"
-local opt = {
+local map_opt = {
     noremap = true,
     silent = true,
 }
 local map = vim.api.nvim_set_keymap
-map(mode, "<leader><leader>g", "<cmd>lua require('after.plugin.colors').change_colors('gruvbox')<CR>", opt)
-map(mode, "<leader><leader>t", "<cmd>lua require('after.plugin.colors').change_colors('tokyonight')<CR>", opt)
+map(mode, "<leader><leader>g", ":lua require('after.plugin.colors').awesome_colors('gruvbox')<CR>", map_opt)
+map(mode, "<leader><leader>t", ":lua require('after.plugin.colors').awesome_colors('tokyonight')<CR>", map_opt)
 
 return M

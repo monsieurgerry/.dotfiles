@@ -91,9 +91,9 @@ return require("packer").startup {
     use "tpope/vim-surround"
     use "mbbill/undotree"
     use "RRethy/vim-illuminate"
-    use {
-      "kyazdani42/nvim-tree.lua", config = function() require'nvim-tree'.setup {} end
-    }
+    -- use {
+    --   "kyazdani42/nvim-tree.lua", config = function() require'nvim-tree'.setup {} end
+    -- }
     use "mkitt/tabline.vim"
     use "sbdchd/neoformat"
 

@@ -1,5 +1,7 @@
 require "impatient"
 
+package.path = "/home/gerry/.config/nvim/" .. package.path
+
 -- Tecla leader
 vim.g.mapleader = ","
 

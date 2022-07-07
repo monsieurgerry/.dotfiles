@@ -19,7 +19,7 @@ keymap("<leader>y", "%y+") -- Copiar todo
 maps('n', '<leader>p', ':w!<CR> :so %<CR> :PackerSync<CR>', {noremap = true,}) -- Packer rapidin
 keymap("<leader><leader>s", "source ~/.config/nvim/after/plugin/luasnip.lua") -- Recargar snippets
 
-keymap("<space>e", "NvimTreeToggle") -- Explorador
+keymap("<space>e", "Lexplore") -- Explorador
 keymap("<leader>q", "Startify")
 keymap("<leader>u", "UndotreeToggle")
 keymap("<space>t", "TroubleToggle") -- LSP diagnostics

@@ -3,11 +3,9 @@
 #define TERMINAL "st"
 #define TERMCLASS "St"
 
-// Sera firefoxdev el vs** de los navegadores?
-
 /* Apariencia */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const unsigned int gappx     = 4;        /* gaps between windows */
+static const unsigned int gappx     = 3;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -18,22 +16,22 @@ static char normfgcolor[]           = "#000000";
 static char selfgcolor[]            = "#000000";
 static char selbgcolor[]            = "#C9D6DF";
 
-static char normbordercolor[]       = "#FF1818";
-static char selbordercolor[]        = "#5463FF";
+static char normbordercolor[]       = "#62382a";
+static char selbordercolor[]        = "#1d55a8";
 
-static char bar_white[]             = "#393E46";
-static char bar_text[]              = "#EEEEEE";
-static char bar_black[]             = "#EEEEEE";
-static char bar_blue[]              = "#0F4C75";
+static char bar_color[]             = "#fbfbfb";
+static char text_black[]            = "#000000";
+static char text_bold[]             = "#252525";
+static char aw_blue[]              = "#4aa5dc";
 static char *colors[][3] = {
                /*               fg              bg              border   */
     [SchemeNorm]        = { normfgcolor,    normbgcolor,    normbordercolor },
     [SchemeSel]         = { selfgcolor,     selbgcolor,     selbordercolor  },
-    [SchemeStatus]      = { bar_black,      bar_white,      "#000000"  }, // Right
-    [SchemeTagsSel]     = { bar_text,       bar_blue,      "#000000"  }, // Left
-    [SchemeTagsNorm]    = { bar_black,      bar_white,      "#000000"  }, // Left
-    [SchemeInfoSel]     = { bar_black,      bar_white,      "#000000"  }, // Middle
-    [SchemeInfoNorm]    = { bar_black,      bar_white,      "#000000"  }, // Middle
+    [SchemeStatus]      = { text_black,     bar_color,      "#000000"  }, // Right
+    [SchemeTagsSel]     = { text_bold,      aw_blue,        "#000000"  }, // Left
+    [SchemeTagsNorm]    = { text_black,     bar_color,      "#000000"  }, // Left
+    [SchemeInfoSel]     = { text_black,     bar_color,      "#000000"  }, // Middle
+    [SchemeInfoNorm]    = { text_black,     bar_color,      "#000000"  }, // Middle
 };
 /* FONTS */
 static const char *fonts[] = {
@@ -55,7 +53,7 @@ static Sp scratchpads[] = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 static const Rule rules[] = {
     /* class            instance    title       tags mask   isfloating  monitor */
 	{ "Gimp",	        NULL,		NULL,		1 << 4,		1,			-1 },

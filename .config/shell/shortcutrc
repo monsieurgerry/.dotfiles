@@ -11,6 +11,7 @@ dw="cd /home/gerry/Downloads && ls -a" \
 doc="cd /home/gerry/Documents && ls" \
 m="cd /home/gerry/Music && ls" \
 pp="cd /home/gerry/Pictures && ls" \
+ppw="cd /home/gerry/Pictures/walls && ls" \
 vv="cd /home/gerry/Videos && ls" \
 d="cd /home/gerry/.dotfiles && ls" \
 rr="cd /home/gerry/.local/bin && ls" \
