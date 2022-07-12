@@ -1,0 +1,26 @@
+#!/bin/sh
+
+CHARGE=$(cat /sys/class/power_supply/BAT0/capacity)
+STATUS=$(cat /sys/class/power_supply/BAT0/status)
+TIME=600 # en Segundos
+
+while true 
+do
+    if [ "$STATUS" = "Discharging" ]; then
+        if [[ "$CHARGE" -le 25 ]]; then
+            notify-send -u critical -i "battery-low" -t 10000 \
+            "Bateria baja:  $CHARGE%" "Conecte el cargador a su pc"
+            TIME=300 # 5 min
+        elif [[ "$CHARGE" -gt 50 ]]; then
+            TIME=1800 # 30 min
+        elif [[ "$CHARGE" -gt 80 ]]; then
+            TIME=3600 # 1h
+        fi
+    elif [ "$STATUS" = "Charging" ]; then
+        [ "$CHARGE" -gt 80 ] && \
+            notify-send -i "battery-charge" -u low -t 5000 \
+            "Bateria cargada: $CHARGE%" "Favor de desconectar el cargador"
+            TIME=300
+    fi
+sleep "$TIME"
+done

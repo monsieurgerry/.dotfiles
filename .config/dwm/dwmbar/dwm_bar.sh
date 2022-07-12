@@ -59,7 +59,7 @@ do
     upperbar="$upperbar$(dwm_spotify)"
     upperbar="$upperbar$(dwm_mail)"
     upperbar="$upperbar$(dwm_bluetooth)"
-    # upperbar="$upperbar$(dwm_battery)"
+    upperbar="$upperbar$(dwm_battery)"
     upperbar="$upperbar$(dwm_networkmanager)"
     upperbar="$upperbar$(dwm_date)"
     # Append results of each func one by one to the lowerbar string

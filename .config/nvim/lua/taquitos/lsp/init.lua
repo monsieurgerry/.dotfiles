@@ -22,7 +22,7 @@ local custom_attach = function()
 
 end
 
-local language_path = "/home/gerry/.local/lib/"
+local language_path = "/home/monsieurgerry/.local/lib/"
 
 nvim_lsp.sumneko_lua.setup {
     capabilities = capabilities,
@@ -81,7 +81,7 @@ nvim_lsp.texlab.setup {
 }
 
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
-local workspace_dir = '/home/gerry/.cache/jdtls/' .. project_name
+local workspace_dir = '/home/monsieurgerry/.cache/jdtls/' .. project_name
 
 nvim_lsp.jdtls.setup {
   cwd = { "jdtls" },

@@ -45,7 +45,7 @@ opt.expandtab = true
 opt.makeprg = "gcc"
 
 -- UNDOTREE
-opt.undodir = "/home/gerry/.cache/nvim/undodir/"
+opt.undodir = "/home/monsieurgerry/.cache/nvim/undodir/"
 opt.undofile = true
 opt.swapfile = false
 opt.backup = false

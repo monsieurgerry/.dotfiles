@@ -37,8 +37,8 @@ static char *colors[][3] = {
 };
 /* FONTS */
 static const char *fonts[] = {
-  "SF Pro Display:pixelsize=18",
-  "JetBrainsMono Nerd Font Mono:pixelsize=20"
+    "SF-Pro Display:pixelsize=18",
+    "JetBrainsMono Nerd Font Mono:pixelsize=26"
 };
 static const char dmenufont[] = "JetBrainsMono Nerd Font Mono:pixelsize=18";
 

@@ -9,6 +9,7 @@ xrandr --output HDMI1 --auto --scale 1.0x1.0 --output eDP1 --right-of HDMI1 &
 xrandr --output HDMI1 --primary --mode 1920x1080 --rate 60 &
 remaps &
 pipewire &
+batdunst &
 
 autostart="mpd xcompmgr dunst unclutter"
 

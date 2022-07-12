@@ -49,7 +49,7 @@ bindkey -s '^a' 'bc -lq\n'
 
 bindkey -s '^f' 'cd "$(dirname "$(fzf)")"\n'
 
-bindkey -s '^t' 'tmux a\n'
+bindkey -s '^t' 'tmux\n'
 
 # bindkey -s '^T' 'tmux\n'
 
@@ -66,4 +66,4 @@ source /usr/share/zsh/plugins/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 # Load syntax highlighting; should be last.
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
 
-alias luamake=/home/gerry/Library/lua-language-server/3rd/luamake/luamake
+alias luamake=/home/monsieurgerry/Library/lua-language-server/3rd/luamake/luamake

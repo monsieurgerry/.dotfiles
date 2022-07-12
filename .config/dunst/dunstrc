@@ -8,19 +8,23 @@
 
     ### Visuales ###
     transparency = 10
-    geometry = "0.0-30+20"
+    # geometry = "0.0-30+20"
+    width = 400
+    height = 200
     # Posicion de la notificacion
     origin = top-right
     # Offset from the origin
     offset = 20x50
     # Draw a line of "separator_height" pixel height between two notifications
-    separator_height = 2
+    separator_height = 4
     # Defines width in pixels of frame around the notification window.
     frame_width = 2
     # Defines color of the frame around the notification window.
     frame_color = "#303030"
     # Define a color for the separator.
     separator_color = frame
+
+    corner_radius = 7
 
     ## Progress bar ##
     progress_bar = true
@@ -69,10 +73,10 @@
     # Horizontal padding.
     horizontal_padding = 8
     # Padding between text and icon.
-    text_icon_padding = 0
+    text_icon_padding = 20
 
     ### Icons ###
-    icon_path = /home/gerry/.local/share/icons/notifications/
+    icon_path = /home/monsieurgerry/.local/share/icons/notifications/
     # Align icons left/right/top/off
     icon_position = left
     min_icon_size = 34
@@ -90,7 +94,7 @@
 
     ### Misc/Advanced ###
     # dmenu path.
-    dmenu = /home/gerry/.local/src/dmenu/dmenu -p dunst:
+    dmenu = /home/monsieurgerry/.local/src/dmenu/dmenu -p dunst:
     # Browser for opening urls in context menu.
     browser = /usr/bin/xdg-open
     # Define the title of the windows spawned by dunst
