@@ -58,6 +58,7 @@ do
     # upperbar="$upperbar$(dwm_vpn)"
 
     upperbar="$upperbar$(dwm_steam)"
+    upperbar="$upperbar$(dwm_spotify)"
     upperbar="$upperbar$(dwm_mail)"
     upperbar="$upperbar$(dwm_bluetooth)"
     upperbar="$upperbar$(dwm_networkmanager)"

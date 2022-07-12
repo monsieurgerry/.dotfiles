@@ -1,28 +1,47 @@
 #!/bin/bash
 
+volume=$(pamixer --get-volume)
+
 function send_notification() {
-	volume=$(pamixer --get-volume)
-	dunstify -a "changevolume" -u low -r "9993" -h int:value:"$volume" -i "volume-$1" "Volumen: ${volume}%" -t 1000
+    barra=$(seq --separator="━" 0 "$((volume / 5))" | sed 's/[0-9]//g')
+    paplay ~/.local/share/sounds/pop.ogg
+    dunstify -i "volume-$STATUS" -a "changevolume" -r 9993 -u low "  $barra"
+}
+
+function check_status() {
+    if [[ $volume -gt 79 ]]; then
+        STATUS="high"
+    elif [[ $volume -gt 49 ]]; then
+        STATUS="mid"
+    elif [[ $volume -gt 1 ]]; then
+        STATUS="low"
+    elif [[ $volume -eq 0 ]]; then
+        STATUS="off"
+    else
+        STATUS="mid"
+    fi
 }
 
 case $1 in
 up)
-	# Set the volume on (if it was muted)
 	pamixer -u
 	pamixer -i 5 --allow-boost
-	send_notification $1
+    check_status
+	send_notification
 	;;
 down)
 	pamixer -u
 	pamixer -d 5 --allow-boost
-	send_notification $1
+    check_status
+	send_notification
 	;;
 mute)
 	pamixer -t
 	if $(pamixer --get-mute); then
 		dunstify -i volume-mute -a "changevolume" -t 2000 -r 9993 -u low "Muted"
 	else
-		send_notification up
+        check_status
+		send_notification
 	fi
 	;;
 esac

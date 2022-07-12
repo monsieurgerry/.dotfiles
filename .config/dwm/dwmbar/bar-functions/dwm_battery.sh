@@ -24,18 +24,6 @@ dwm_battery () {
                 printf "%s%% " "$CHARGE"
             fi
         else
-            # if [ "$CHARGE" -le 20 ]; then
-            #     printf "%s%% " "$CHARGE"
-            # elif [ "$CHARGE" -le 40 ]; then
-            #     printf "%s%% " "$CHARGE"
-            # elif [ "$CHARGE" -le 60 ]; then
-            #     printf "%s%% " "$CHARGE"
-            # elif [ "$CHARGE" -le 80 ]; then
-            #     printf "%s%% " "$CHARGE"
-            # elif [ "$CHARGE" -le 100 ]; then
-            #     printf "%s%% " "$CHARGE"
-
-            # No numbers
             if [ "$CHARGE" -le 20 ]; then
                 printf ""
             elif [ "$CHARGE" -le 40 ]; then

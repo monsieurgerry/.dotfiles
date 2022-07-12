@@ -5,7 +5,7 @@ require'nvim-treesitter.configs'.setup {
   },
   highlight = {
     enable = true,
-    disable = { "rust", "clangd", "cpp", "latex", "js"},
+    disable = { "rust", "clangd", "cpp", "latex", "js", "markdown"},
   },
   -- rainbow = {
   --   enable = true,

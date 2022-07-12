@@ -2,7 +2,8 @@
 
 function send_notification() {
     brightness=$(printf "%.0f" $(xbacklight))
-	dunstify -a "changebrightness" -u low -r 9991 -h int:value:"$brightness" -i "brightness" "Brightness: $brightness%" -t 1000
+    barra=$(seq --separator="━" 0 "$((brightness / 5))" | sed 's/[0-9]//g')
+    dunstify -a "changebrightness" -i "brightness" -r 9993 -u low "  $barra"
 }
 
 case $1 in

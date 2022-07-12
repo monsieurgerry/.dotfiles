@@ -10,7 +10,7 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 /* COLORES */
-// TODO: Remove this later
+// TODO: Remove this
 static char normbgcolor[]           = "#C9D6DF";
 static char normfgcolor[]           = "#000000";
 static char selfgcolor[]            = "#000000";
@@ -19,19 +19,21 @@ static char selbgcolor[]            = "#C9D6DF";
 static char normbordercolor[]       = "#62382a";
 static char selbordercolor[]        = "#1d55a8";
 
-static char bar_color[]             = "#fbfbfb";
-static char text_black[]            = "#000000";
-static char text_bold[]             = "#252525";
-static char aw_blue[]              = "#4aa5dc";
+static char bar_purple[]            = "#7b6ea4";
+static char bar_blue[]              = "#006ab0";
+static char text_black[]            = "#252525";
+static char text_white[]            = "#f9effa";
+static char aw_gold[]               = "#e0cb70";
+static char aw_blue[]               = "#1f7cb7";
 static char *colors[][3] = {
                /*               fg              bg              border   */
-    [SchemeNorm]        = { normfgcolor,    normbgcolor,    normbordercolor },
-    [SchemeSel]         = { selfgcolor,     selbgcolor,     selbordercolor  },
-    [SchemeStatus]      = { text_black,     bar_color,      "#000000"  }, // Right
-    [SchemeTagsSel]     = { text_bold,      aw_blue,        "#000000"  }, // Left
-    [SchemeTagsNorm]    = { text_black,     bar_color,      "#000000"  }, // Left
-    [SchemeInfoSel]     = { text_black,     bar_color,      "#000000"  }, // Middle
-    [SchemeInfoNorm]    = { text_black,     bar_color,      "#000000"  }, // Middle
+    [SchemeNorm]        = { text_black,     bar_blue,       normbordercolor },
+    [SchemeSel]         = { text_black,     bar_blue,       selbordercolor  },
+    [SchemeStatus]      = { text_white,     bar_blue,       text_black  }, // Right
+    [SchemeTagsSel]     = { aw_gold,        aw_blue,        text_black  }, // Left
+    [SchemeTagsNorm]    = { text_white,     bar_purple,     text_black  }, // Left
+    [SchemeInfoSel]     = { text_white,     bar_blue,       text_black  }, // Middle
+    [SchemeInfoNorm]    = { text_white,     bar_blue,       text_black  }, // Middle
 };
 /* FONTS */
 static const char *fonts[] = {
@@ -61,6 +63,7 @@ static const Rule rules[] = {
     { "Spotify",        NULL,       NULL,       1 << 6,     False,      2 },
     { "Discord",        NULL,       NULL,       1 << 7,     False,      2 },
     { "Steam",          NULL,       NULL,       1 << 6,     False,      2 },
+    { "Brave",          NULL,       NULL,       1 << 1,     False,      2 },
     { "firefoxdeveloperedition",  NULL,       NULL,       1 << 1,     False,      2 },
     { "Chromium",       NULL,       NULL,       1 << 2,     False,      2 },
 	{ NULL,             "spterm",   NULL,       SPTAG(0),   1,          1,  0,  -1 },
@@ -91,7 +94,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", bar_blue, "-nf", text_white, "-sb", bar_blue, "-sf", text_white, NULL };
 static const char *termcmd[]  = { TERMINAL, NULL };
 static const char *school[] = { "chromium", NULL };
 
