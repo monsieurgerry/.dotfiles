@@ -1,8 +1,5 @@
 #!/bin/sh
 
-# This file runs when a DM logs you into a graphical session.
-# If you use startx/xinit like a Chad, this file will also be sourced.
-
 $HOME/.config/dwm/dwmbar/dwm_bar.sh &   # Maybe it's time to change dwmbar to dwmblocks
 
 xrandr --dpi 96
@@ -10,7 +7,6 @@ setbg &
 xbacklight -set 50 &
 xrandr --output HDMI1 --auto --scale 1.0x1.0 --output eDP1 --right-of HDMI1 &
 xrandr --output HDMI1 --primary --mode 1920x1080 --rate 60 &
-#xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources & xrdbpid=$!	# Uncomment to use Xresources colors/settings on startup
 remaps &
 pipewire &
 
